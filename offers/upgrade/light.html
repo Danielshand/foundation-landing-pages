@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer | Join The Foundation Membership</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Foundation Brand Colors */
+            --orange: #F5A623;
+            --steel-blue: #3D5A6C;
+            --pale-steel: #A7B7C0;
+            --white: #FFFFFF;
+            --charcoal: #2B2F36;
+            --deep-teal: #1A3A4A;
+            --dark-teal: #27474E;
+            --dusty-blue: #4A6B78;
+            --burnt-coral: #E07B4C;
+            --sage-green: #7B9E87;
+            --warm-cream: #F5F1E8;
+            --light-cream: #FDFCFA;
+            --red: #C53030;
+            --green: #2F855A;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--light-cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        ::selection {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        /* ═══════════════════════════════════════
+           URGENCY BAR
+        ═══════════════════════════════════════ */
+        .urgency-bar {
+            background: linear-gradient(90deg, var(--orange), var(--burnt-coral));
+            padding: 12px 24px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .urgency-bar p {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        .urgency-bar span {
+            display: inline-block;
+            background: var(--white);
+            color: var(--orange);
+            padding: 2px 10px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-weight: 900;
+        }
+
+        /* ═══════════════════════════════════════
+           NAVIGATION
+        ═══════════════════════════════════════ */
+        nav {
+            position: fixed;
+            top: 44px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--pale-steel);
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span:first-child { font-weight: 300; }
+        .logo span:last-child { font-weight: 900; }
+
+        /* ═══════════════════════════════════════
+           HERO - THANK YOU + OFFER
+        ═══════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--white) 0%, var(--warm-cream) 100%);
+            padding: 140px 80px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.4;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(245, 166, 35, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(61, 90, 108, 0.06) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .thank-you-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--sage-green);
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+
+        .thank-you-badge span {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--dusty-blue);
+            margin-bottom: 40px;
+        }
+
+        .offer-box {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: left;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid rgba(167, 183, 192, 0.3);
+            position: relative;
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--orange), var(--burnt-coral));
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 10px 32px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        .offer-title {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .offer-subtitle {
+            font-size: 1rem;
+            color: var(--dusty-blue);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* ═══════════════════════════════════════
+           VALUE STACK
+        ═══════════════════════════════════════ */
+        .value-stack {
+            margin-bottom: 40px;
+        }
+
+        .value-stack h3 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--steel-blue);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .value-stack h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--pale-steel);
+        }
+
+        .bonus-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px;
+            background: var(--warm-cream);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            position: relative;
+            transition: all 0.3s var(--ease);
+            border: 1px solid transparent;
+        }
+
+        .bonus-item:hover {
+            transform: translateX(8px);
+            border-color: var(--orange);
+            box-shadow: 0 8px 24px rgba(245, 166, 35, 0.1);
+        }
+
+        .bonus-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--white);
+            border: 2px solid var(--steel-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .bonus-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--steel-blue);
+        }
+
+        .bonus-content {
+            flex: 1;
+        }
+
+        .bonus-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+
+        .bonus-desc {
+            font-size: 0.9rem;
+            color: var(--dusty-blue);
+            line-height: 1.6;
+        }
+
+        .bonus-value {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--orange);
+            margin-top: 8px;
+        }
+
+        .bonus-tag {
+            position: absolute;
+            top: -8px;
+            right: 16px;
+            background: var(--steel-blue);
+            color: var(--white);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* ═══════════════════════════════════════
+           MEMBERSHIP FEATURES
+        ═══════════════════════════════════════ */
+        .membership-features {
+            margin-bottom: 40px;
+        }
+
+        .membership-features h3 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--steel-blue);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .membership-features h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--pale-steel);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--warm-cream);
+            border-radius: 8px;
+        }
+
+        .feature-check {
+            width: 22px;
+            height: 22px;
+            background: var(--sage-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-check::after {
+            content: '✓';
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .feature-text {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        /* ═══════════════════════════════════════
+           PRICING
+        ═══════════════════════════════════════ */
+        .pricing-section {
+            text-align: center;
+            padding: 32px;
+            background: var(--warm-cream);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            border: 2px solid var(--pale-steel);
+        }
+
+        .pricing-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--dusty-blue);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .price-currency {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .price-value {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--dusty-blue);
+        }
+
+        .pricing-note {
+            font-size: 0.85rem;
+            color: var(--dusty-blue);
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 20px 32px;
+            background: linear-gradient(90deg, var(--orange), var(--burnt-coral));
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 166, 35, 0.35);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+
+        .skip-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--dusty-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .skip-link:hover {
+            color: var(--charcoal);
+        }
+
+        /* ═══════════════════════════════════════
+           GUARANTEE
+        ═══════════════════════════════════════ */
+        .guarantee {
+            padding: 100px 80px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .guarantee-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guarantee-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--sage-green), #5a8a6a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .guarantee-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--white);
+        }
+
+        .guarantee h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+        }
+
+        .guarantee-main {
+            font-size: 1.15rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .guarantee-sub {
+            font-size: 1rem;
+            color: var(--dusty-blue);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .guarantee-card {
+            background: var(--warm-cream);
+            border-radius: 12px;
+            padding: 32px 40px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .guarantee-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .guarantee-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--pale-steel);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .guarantee-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .guarantee-list li:first-child {
+            padding-top: 0;
+        }
+
+        .guarantee-list li strong {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .guarantee-list li span {
+            font-size: 0.9rem;
+            color: var(--dusty-blue);
+            line-height: 1.6;
+        }
+
+        .guarantee-closing {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--steel-blue);
+            line-height: 1.7;
+            padding: 20px 32px;
+            background: var(--warm-cream);
+            border-left: 4px solid var(--orange);
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+        }
+
+        /* ═══════════════════════════════════════
+           TESTIMONIALS
+        ═══════════════════════════════════════ */
+        .testimonials {
+            padding: 100px 80px;
+            background: var(--warm-cream);
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 64px;
+            text-align: center;
+        }
+
+        .section-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--orange);
+            letter-spacing: 0.2em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 900;
+            color: var(--charcoal);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            padding: 32px;
+            background: var(--white);
+            border: 1px solid var(--pale-steel);
+            border-radius: 12px;
+            transition: all 0.3s var(--ease);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--orange);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-stat {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--orange);
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--dusty-blue);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--steel-blue), var(--dusty-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--white);
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+        }
+
+        .author-role {
+            font-size: 0.75rem;
+            color: var(--dusty-blue);
+        }
+
+        /* ═══════════════════════════════════════
+           FINAL CTA
+        ═══════════════════════════════════════ */
+        .final-cta {
+            padding: 100px 80px;
+            background: var(--steel-blue);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: var(--pale-steel);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 56px;
+            background: var(--orange);
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s var(--ease);
+        }
+
+        .final-cta .btn:hover {
+            background: var(--burnt-coral);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 166, 35, 0.3);
+        }
+
+        .final-cta .trust-badges {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .final-cta .trust-badges span {
+            font-size: 0.8rem;
+            color: var(--pale-steel);
+        }
+
+        /* ═══════════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════════ */
+        footer {
+            padding: 40px 80px;
+            background: var(--white);
+            text-align: center;
+            border-top: 1px solid var(--pale-steel);
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: var(--dusty-blue);
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        /* ═══════════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .urgency-bar { padding: 10px 16px; }
+            .urgency-bar p { font-size: 0.8rem; }
+            nav { top: 38px; padding: 12px 24px; }
+            .hero { padding: 130px 24px 60px; }
+            .offer-box { padding: 32px 20px; }
+            .guarantee, .testimonials, .final-cta { padding: 60px 24px; }
+            footer { padding: 32px 24px; }
+            .price-value { font-size: 4rem; }
+            .guarantee-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        <p>🎉 You're in! One-time offer for new members<span id="timer">15:00</span></p>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo"><span>THE</span><span>FOUNDATION</span></a>
+    </nav>
+
+    <!-- Hero - Thank You + Offer -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="thank-you-badge">
+                <span>✓ You're In - Check Your Email</span>
+            </div>
+            <h1>Wait! Before You Go...</h1>
+            <p class="hero-sub">You've got The Blueprint. Now get the complete Foundation system.</p>
+
+            <div class="offer-box">
+                <div class="offer-badge">Special New Member Offer</div>
+                <h2 class="offer-title">Join The Foundation Membership</h2>
+                <p class="offer-subtitle">Get the complete system + 3 exclusive bonuses (free with membership)</p>
+
+                <!-- Value Stack - Bonuses -->
+                <div class="value-stack">
+                    <h3>Your Free Bonuses (Included Today)</h3>
+
+                    <div class="bonus-item">
+                        <div class="bonus-tag">Bonus #1</div>
+                        <div class="bonus-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-title">The Objection Decoder Black Book</div>
+                            <div class="bonus-desc">Map 12 common objections to specific failures in your sales process. Keep this on your desk for every call.</div>
+                            <div class="bonus-value">Value: $199</div>
+                        </div>
+                    </div>
+
+                    <div class="bonus-item">
+                        <div class="bonus-tag">Bonus #2</div>
+                        <div class="bonus-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-title">The Evergreen "No" Machine</div>
+                            <div class="bonus-desc">Follow-up flywheel kit with 12 plug-and-play email templates. Turn your "not now" pile into future revenue.</div>
+                            <div class="bonus-value">Value: $199</div>
+                        </div>
+                    </div>
+
+                    <div class="bonus-item">
+                        <div class="bonus-tag">Bonus #3</div>
+                        <div class="bonus-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                                <path d="M9 11l3 3L22 4"/>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-title">The Foundation Deal Scorecard</div>
+                            <div class="bonus-desc">8-step pipeline audit tool. Objectively score your deals and prevent "happy ears" syndrome.</div>
+                            <div class="bonus-value">Value: $199</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membership Features -->
+                <div class="membership-features">
+                    <h3>Plus Full Membership Access</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-check"></div>
+                            <span class="feature-text">175+ Training Modules</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"></div>
+                            <span class="feature-text">Weekly Live Coaching Calls</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"></div>
+                            <span class="feature-text">Psychology Playbook</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"></div>
+                            <span class="feature-text">Complete Script Vault</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"></div>
+                            <span class="feature-text">Email Template Library</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"></div>
+                            <span class="feature-text">Private Community Access</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"></div>
+                            <span class="feature-text">Lifetime Updates</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"></div>
+                            <span class="feature-text">Certification Program</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing -->
+                <div class="pricing-section">
+                    <div class="pricing-label">New Member Price</div>
+                    <div class="pricing-amount">
+                        <span class="price-currency">$</span>
+                        <span class="price-value">399</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <div class="pricing-note">Cancel anytime. Start today. 60 day performance Commitment.</div>
+                </div>
+
+                <a href="https://courses.thefoundationhq.com/55e3cadc" class="cta-button">Yes! Upgrade My Access Now →</a>
+
+                <a href="https://courses.thefoundationhq.com/f58bc4f5-8d173036-b14aea28-ad3e659a-16ab6b4d" class="skip-link">No thanks, I'll just take the free course →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="guarantee-content">
+            <div class="guarantee-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+            </div>
+            <h2>60 Day Performance Guarantee</h2>
+            <p class="guarantee-main">Complete THEFOUNDATION Method™ for 60 days. If you don't see measurable improvement in your sales conversations, we will provide a personal session along with specialized support and access to more resources.</p>
+            <p class="guarantee-sub">We're confident in what we deliver because we've seen it transform thousands of sales careers.</p>
+
+            <div class="guarantee-card">
+                <ul class="guarantee-list">
+                    <li>
+                        <strong>Tailored Support</strong>
+                        <span>Personalized one-on-one coaching session included (on the house) to pinpoint your hurdles and leap over them.</span>
+                    </li>
+                    <li>
+                        <strong>Expanded Resources</strong>
+                        <span>Exclusive access to additional tools and resources, equipping you for the whole journey, not just the start.</span>
+                    </li>
+                    <li>
+                        <strong>Infinity Pass</strong>
+                        <span>Ongoing access to professional selling resources and sales strategies specific to your situation.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="guarantee-closing">
+                "Your growth is our priority. We're as committed to your success as you are. Let's not settle for quitting when mastery is in sight."
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <span class="section-number">SUCCESS STORIES</span>
+            <h2 class="section-title">Members Get Results</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stat">18% → 27%</div>
+                <p class="testimonial-text">"The Foundation Method completely changed how I approach sales. Within 60 days, my close rate jumped significantly. I'm working smarter, not harder."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div>
+                        <div class="author-name">Michael R.</div>
+                        <div class="author-role">Enterprise Account Executive</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stat">$110K Deal</div>
+                <p class="testimonial-text">"I closed my biggest deal ever using the exact framework from the program. The psychology modules alone were worth 10x the investment."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AT</div>
+                    <div>
+                        <div class="author-name">Ashley T.</div>
+                        <div class="author-role">SaaS Sales Representative</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stat">2x Commission</div>
+                <p class="testimonial-text">"Doubled my commission in Q3 after implementing the 8-step system. The email templates and objection handling guides are incredibly practical."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DL</div>
+                    <div>
+                        <div class="author-name">David L.</div>
+                        <div class="author-role">B2B Sales Manager</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to Transform Your Sales Career?</h2>
+        <p>Get instant access to the complete Foundation system plus all 3 bonuses. Start your transformation today.</p>
+        <a href="https://courses.thefoundationhq.com/55e3cadc" class="btn">Upgrade My Access Now →</a>
+        <div class="trust-badges">
+            <span>✓ Cancel Anytime</span>
+            <span>✓ 60-Day Guarantee</span>
+            <span>✓ Instant Access</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 THEFOUNDATION Sales Training, Coaching & Mentorship. All rights reserved. <a href="#">Contact</a></p>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        let timeLeft = 15 * 60; // 15 minutes in seconds
+        const timerEl = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        updateTimer();
+    </script>
+</body>
+</html>

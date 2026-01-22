@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blueprint | Free Sales Training Course | The Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Foundation Brand Colors */
+            --orange: #F5A623;
+            --steel-blue: #3D5A6C;
+            --pale-steel: #A7B7C0;
+            --white: #FFFFFF;
+            --charcoal: #2B2F36;
+            --deep-teal: #1A3A4A;
+            --dark-teal: #27474E;
+            --dusty-blue: #4A6B78;
+            --burnt-coral: #E07B4C;
+            --sage-green: #7B9E87;
+            --warm-cream: #F5F1E8;
+            --red: #C53030;
+            --green: #2F855A;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        ::selection {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        /* ═══════════════════════════════════════
+           NAVIGATION
+        ═══════════════════════════════════════ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 58, 74, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span:first-child { font-weight: 300; }
+        .logo span:last-child { font-weight: 900; }
+
+        .nav-cta {
+            padding: 10px 24px;
+            background: var(--orange);
+            border: none;
+            color: var(--white);
+            font-family: inherit;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+        }
+
+        .nav-cta:hover {
+            background: var(--burnt-coral);
+            transform: translateY(-2px);
+        }
+
+        /* ═══════════════════════════════════════
+           HERO WITH FORM
+        ═══════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--dark-teal) 100%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 120px 80px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(var(--pale-steel) 1px, transparent 1px),
+                linear-gradient(90deg, var(--pale-steel) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(245, 166, 35, 0.15);
+            border: 1px solid var(--orange);
+            border-radius: 50px;
+            margin-bottom: 32px;
+        }
+
+        .hero-badge span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--orange);
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--orange);
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--pale-steel);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .hero-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .hero-features li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--orange);
+            border-radius: 50%;
+            font-size: 0.75rem;
+            color: var(--white);
+        }
+
+        /* Form Card */
+        .form-card {
+            position: relative;
+            z-index: 2;
+            background: var(--white);
+            padding: 48px;
+            border-radius: 8px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+        }
+
+        .form-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--orange);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        .form-title {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            font-size: 1rem;
+            color: var(--dusty-blue);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid var(--pale-steel);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--charcoal);
+            transition: all 0.3s var(--ease);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: var(--pale-steel);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 18px 32px;
+            background: var(--orange);
+            border: none;
+            border-radius: 4px;
+            color: var(--white);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-submit:hover {
+            background: var(--burnt-coral);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 166, 35, 0.3);
+        }
+
+        .form-submit::after {
+            content: '→';
+            margin-left: 10px;
+            display: inline-block;
+            transition: transform 0.3s var(--ease);
+        }
+
+        .form-submit:hover::after {
+            transform: translateX(5px);
+        }
+
+        .form-trust {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--pale-steel);
+        }
+
+        .form-trust span {
+            font-size: 0.75rem;
+            color: var(--dusty-blue);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .form-trust span::before {
+            content: '✓';
+            color: var(--sage-green);
+        }
+
+        /* ═══════════════════════════════════════
+           WHAT YOU'LL LEARN
+        ═══════════════════════════════════════ */
+        .learn {
+            padding: 120px 80px;
+            background: var(--white);
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 64px;
+            text-align: center;
+        }
+
+        .section-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--orange);
+            letter-spacing: 0.2em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--charcoal);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .learn-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .learn-card {
+            padding: 40px;
+            background: var(--warm-cream);
+            border-radius: 8px;
+            position: relative;
+            transition: all 0.4s var(--ease);
+        }
+
+        .learn-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .learn-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--orange);
+            border-radius: 8px 8px 0 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease);
+        }
+
+        .learn-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .learn-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(61, 90, 108, 0.1);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .learn-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+
+        .learn-desc {
+            font-size: 0.95rem;
+            color: var(--dusty-blue);
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════
+           SOCIAL PROOF
+        ═══════════════════════════════════════ */
+        .proof {
+            padding: 120px 80px;
+            background: var(--deep-teal);
+        }
+
+        .proof .section-title {
+            color: var(--white);
+        }
+
+        .proof-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .proof-card {
+            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            transition: all 0.4s var(--ease);
+        }
+
+        .proof-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-4px);
+        }
+
+        .proof-stat {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--orange);
+            margin-bottom: 16px;
+        }
+
+        .proof-quote {
+            font-size: 1rem;
+            color: var(--pale-steel);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .proof-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .proof-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--orange), var(--burnt-coral));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .proof-name {
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .proof-role {
+            font-size: 0.8rem;
+            color: var(--dusty-blue);
+        }
+
+        /* ═══════════════════════════════════════
+           FAQ
+        ═══════════════════════════════════════ */
+        .faq {
+            padding: 120px 80px;
+            background: var(--warm-cream);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .faq-q {
+            width: 100%;
+            padding: 28px 0;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            transition: color 0.3s;
+        }
+
+        .faq-q:hover {
+            color: var(--orange);
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.3s var(--ease);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: var(--white);
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s var(--ease), padding 0.5s var(--ease);
+        }
+
+        .faq-item.active .faq-a {
+            max-height: 200px;
+            padding-bottom: 28px;
+        }
+
+        .faq-a p {
+            color: var(--dusty-blue);
+            line-height: 1.8;
+        }
+
+        /* ═══════════════════════════════════════
+           FINAL CTA
+        ═══════════════════════════════════════ */
+        .final-cta {
+            padding: 100px 80px;
+            background: var(--charcoal);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: var(--pale-steel);
+            margin-bottom: 32px;
+        }
+
+        .final-cta .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 48px;
+            background: var(--orange);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s var(--ease);
+        }
+
+        .final-cta .btn:hover {
+            background: var(--burnt-coral);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 166, 35, 0.3);
+        }
+
+        /* ═══════════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════════ */
+        footer {
+            padding: 40px 80px;
+            background: var(--deep-teal);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: var(--dusty-blue);
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        /* ═══════════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding: 120px 40px 60px;
+            }
+            .learn-grid, .proof-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            .hero { padding: 100px 24px 48px; }
+            .learn, .proof, .faq, .final-cta { padding: 80px 24px; }
+            footer { padding: 32px 24px; }
+            .form-card { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo"><span>THE</span><span>FOUNDATION</span></a>
+        <a href="#signup" class="nav-cta">Get Free Access</a>
+    </nav>
+
+    <!-- Hero with Form -->
+    <section class="hero" id="signup">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>Free Video Course</span>
+            </div>
+            <h1>Master the <span class="highlight">Modern Sales</span> Blueprint</h1>
+            <p class="hero-sub">The complete video training that shows you exactly how to close more deals, work fewer hours, and actually enjoy selling.</p>
+            <ul class="hero-features">
+                <li>5 in-depth video modules</li>
+                <li>The 8-step system top performers use</li>
+                <li>Frameworks you can apply immediately</li>
+                <li>No fluff. No theory. Just what works.</li>
+            </ul>
+        </div>
+        <div class="form-card">
+            <div class="form-badge">100% Free</div>
+            <h2 class="form-title">Get Instant Access</h2>
+            <p class="form-subtitle">Enter your details below to start watching</p>
+            <form id="optinForm" action="/offers/upgrade/" method="GET">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <button type="submit" class="form-submit">Get Free Access Now</button>
+            </form>
+            <div class="form-trust">
+                <span>No credit card required</span>
+                <span>Instant access</span>
+                <span>Unsubscribe anytime</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section class="learn">
+        <div class="section-header">
+            <span class="section-number">WHAT YOU'LL LEARN</span>
+            <h2 class="section-title">Inside The Blueprint</h2>
+        </div>
+        <div class="learn-grid">
+            <div class="learn-card">
+                <div class="learn-num">01</div>
+                <h3 class="learn-title">The Modern Sales Mindset</h3>
+                <p class="learn-desc">Why traditional sales tactics fail in 2026 and the new psychology that drives B2B buying decisions.</p>
+            </div>
+            <div class="learn-card">
+                <div class="learn-num">02</div>
+                <h3 class="learn-title">The 8-Step System</h3>
+                <p class="learn-desc">The exact framework top performers use to consistently close 30%+ of their qualified opportunities.</p>
+            </div>
+            <div class="learn-card">
+                <div class="learn-num">03</div>
+                <h3 class="learn-title">Objection Handling</h3>
+                <p class="learn-desc">How to reframe objections as buying signals and use the "Agree and Progress" framework.</p>
+            </div>
+            <div class="learn-card">
+                <div class="learn-num">04</div>
+                <h3 class="learn-title">Pipeline Management</h3>
+                <p class="learn-desc">Build a predictable pipeline that removes feast-or-famine cycles from your sales career.</p>
+            </div>
+            <div class="learn-card">
+                <div class="learn-num">05</div>
+                <h3 class="learn-title">Closing Confidently</h3>
+                <p class="learn-desc">Secure commitments naturally without high-pressure tactics that damage relationships.</p>
+            </div>
+            <div class="learn-card">
+                <div class="learn-num">06</div>
+                <h3 class="learn-title">Implementation Plan</h3>
+                <p class="learn-desc">A practical 30-day roadmap to apply everything you learn and see results fast.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="proof">
+        <div class="section-header">
+            <span class="section-number">WHAT OTHERS SAY</span>
+            <h2 class="section-title">Real Results from Real Reps</h2>
+        </div>
+        <div class="proof-grid">
+            <div class="proof-card">
+                <div class="proof-stat">18% → 27%</div>
+                <p class="proof-quote">"The Foundation Method completely changed how I approach sales. Within 60 days, my close rate jumped significantly."</p>
+                <div class="proof-author">
+                    <div class="proof-avatar">MR</div>
+                    <div>
+                        <div class="proof-name">Michael R.</div>
+                        <div class="proof-role">Enterprise Account Executive</div>
+                    </div>
+                </div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-stat">$110K Deal</div>
+                <p class="proof-quote">"I closed my biggest deal ever using the exact framework. The psychology modules alone were worth 10x the time invested."</p>
+                <div class="proof-author">
+                    <div class="proof-avatar">AT</div>
+                    <div>
+                        <div class="proof-name">Ashley T.</div>
+                        <div class="proof-role">SaaS Sales Representative</div>
+                    </div>
+                </div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-stat">2x Commission</div>
+                <p class="proof-quote">"Doubled my commission in Q3 after implementing the system. The templates are incredibly practical and effective."</p>
+                <div class="proof-author">
+                    <div class="proof-avatar">DL</div>
+                    <div>
+                        <div class="proof-name">David L.</div>
+                        <div class="proof-role">B2B Sales Manager</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="section-header">
+            <span class="section-number">QUESTIONS</span>
+            <h2 class="section-title">Frequently Asked</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-q">
+                    <span>Is this really free?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>Yes, 100% free. No credit card required. We created this course to help sales reps see what's possible with modern selling techniques. If you find it valuable, we'll invite you to explore our full training program.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">
+                    <span>How long is the course?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>The Blueprint consists of 5 video modules totaling about 90 minutes. You can watch at your own pace, and most people complete it in a single sitting or over a few days.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">
+                    <span>Will this work for my industry?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>The Blueprint is designed for B2B sales professionals selling complex deals ($10K+). The principles work across SaaS, professional services, manufacturing, and many other B2B contexts.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">
+                    <span>When do I get access?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>Immediately. As soon as you enter your email, you'll be redirected to the first video. You'll also receive an email with all the links so you can come back anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to Transform Your Sales?</h2>
+        <p>Join thousands of reps who've already discovered a better way.</p>
+        <a href="#signup" class="btn">Get Free Access Now →</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 THEFOUNDATION Sales Training, Coaching & Mentorship. All rights reserved. <a href="#">Contact</a></p>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
